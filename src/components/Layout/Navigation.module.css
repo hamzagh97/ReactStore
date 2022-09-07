@@ -1,0 +1,55 @@
+ul.nav {
+  flex: 3;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.nav li {
+  margin: 0 0.5rem;
+}
+
+ul.nav li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+ul.nav li button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  color: white;
+  padding: 0rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+ul.nav li button:hover,
+ul.nav li button:active {
+}
+
+@media (max-width: 576px) {
+  ul.nav li {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  ul.nav li {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}

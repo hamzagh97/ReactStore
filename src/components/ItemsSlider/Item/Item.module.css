@@ -1,0 +1,35 @@
+.item {
+  border: none;
+  position: relative;
+  height: 100%;
+}
+
+.item img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem 1rem 0.5rem 1rem;
+  align-items: center;
+}
+
+.item h3 {
+  margin: 0 0 0.25rem 0;
+  font-style: italic;
+  display: block;
+}
+
+.description {
+}
+
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: green;
+  font-size: 1.25rem;
+}

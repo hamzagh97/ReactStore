@@ -1,0 +1,71 @@
+.button {
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  padding: 0.2rem 0.5rem !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.button:hover,
+.button:active {
+  background-color: #000;
+  color: #fff;
+}
+
+.icon {
+  width: 1.35rem;
+  margin-right: 0.5rem;
+}
+
+.button:hover svg {
+  fill: white;
+}
+
+.button .your-cart {
+  color: #000;
+}
+
+.button .badge {
+  background-color: #000;
+  padding: 0.25rem 1rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+  font-weight: bold;
+  color: #fff;
+  color: #fff;
+  background-color: #000;
+}
+.button:hover .badge {
+  background-color: #fff;
+  color: #000;
+}
+
+.button:hover .your-cart {
+  color: #fff;
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

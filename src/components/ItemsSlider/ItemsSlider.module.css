@@ -1,0 +1,136 @@
+.intro {
+  margin: 70px auto;
+  width: 100%;
+  text-transform: capitalize;
+  text-align: center;
+  width: 75%;
+}
+
+.intro h2 {
+  font-size: 48px;
+}
+
+ul.list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+ul.list li {
+  padding: 10px 20px;
+}
+
+.row {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
+  padding: 0 4%;
+}
+
+.slider {
+  position: relative;
+  display: grid;
+  grid-auto-columns: 100%;
+  justify-content: space-between;
+  grid-auto-flow: column;
+  margin: 0 auto;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  grid-gap: 10px;
+}
+
+.handle {
+  border: none;
+  width: 3%;
+  background-color: transparent; /*hsla(0, 0%, 8%, 0.5)*/
+  cursor: pointer;
+  color: white;
+  transition: background-color 150ms ease-in-out;
+  position: absolute;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 100;
+}
+
+.row:hover .handle {
+  opacity: 1;
+}
+
+.right-handle {
+  right: 0;
+}
+
+.left-handle {
+  left: 0;
+}
+
+.text {
+  transition: transform 150ms ease-in-out;
+  opacity: 1;
+  font-size: 4rem;
+  color: black;
+}
+
+@keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 576px) {
+  /* .row {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 3%;
+    margin-top: 50px;
+    width: 90%;
+  } */
+
+  .slider {
+    grid-auto-columns: 50%;
+  }
+
+  .right-handle {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .left-handle {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider {
+    grid-auto-columns: calc(100% / 3);
+  }
+}
+
+@media (min-width: 992px) {
+  .slider {
+    grid-auto-columns: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .slider {
+    grid-auto-columns: 25%;
+  }
+}
+
+@media (min-width: 1400px) {
+}

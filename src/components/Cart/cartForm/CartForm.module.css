@@ -1,0 +1,38 @@
+form.order-form {
+  animation: slide-down 300ms ease-out forwards;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions button {
+  padding: 0.5rem 2rem;
+}
+
+.actions button:last-of-type {
+  margin-left: 1rem;
+}
+
+.actions .button--alt {
+  color: #000;
+  background-color: #fff;
+}
+
+.actions .button--alt:hover {
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
