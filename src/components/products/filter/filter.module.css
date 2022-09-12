@@ -1,0 +1,11 @@
+.filter {
+  padding: 20px 0;
+  border-bottom: 2px solid lightgrey;
+  text-transform: capitalize;
+}
+
+.filterChoice {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}

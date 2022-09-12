@@ -26,7 +26,7 @@ const Item = React.forwardRef((props, ref) => {
         <h3>{props.title}</h3>
         {/* <div className={classes.description}>{props.description}</div> */}
         <div className={classes.price}>{price}</div>
-        <ItemForm takeAmount={addAmountToCart} />
+        {!props.isProductPage && <ItemForm takeAmount={addAmountToCart} />}
       </div>
     </div>
   );

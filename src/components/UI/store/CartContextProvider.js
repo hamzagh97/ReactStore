@@ -77,6 +77,8 @@ const CartContextProvider = (props) => {
     cartTotalAmount: itemsState.totalAmount,
   };
 
+  //////////////////////////////////////////
+
   return (
     <CartContext.Provider value={Context}>
       {props.children}

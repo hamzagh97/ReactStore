@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import classes from "./Home.module.css";
 import Banner from "../ItemsSlider/Banner";
 import Categories from "../categories/Categories";
@@ -7,14 +7,15 @@ import homeImage from "../../assets/main.webp";
 import banner5 from "../../assets/images/5.webp";
 import banner6 from "../../assets/images/6.webp";
 import banner7 from "../../assets/images/7.webp";
+import useFetch from "../../hooks/use-fecth";
 
 const Home = (props) => {
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const { items, error, isLoading } = useFetch(
+    "http://localhost:3005/products"
+  );
+  const backgrounds = [homeImage, banner5, banner6, banner7];
   const [isTop, setIsTop] = useState(true);
 
-  const backgrounds = [homeImage, banner5, banner6, banner7];
   const [index, setIndex] = useState(0);
 
   setTimeout(() => {
@@ -24,21 +25,15 @@ const Home = (props) => {
     }
   }, 1000);
 
+  // const [items, setItems] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState(null);
+
   // const fetchItemsHandler = useCallback(async () => {
   //   setIsLoading(true);
   //   setError(null);
   //   try {
-  //     const response = await fetch(
-  //       `https://asos2.p.rapidapi.com/categories/list`,
-  //       {
-  //         method: "GET",
-  //         headers: {
-  //           "X-RapidAPI-Key":
-  //             "60c04c5f27msh3ba2a9f6a073424p150bf5jsn517b435134cc",
-  //           "X-RapidAPI-Host": "asos2.p.rapidapi.com",
-  //         },
-  //       }
-  //     );
+  //     const response = await fetch(`http://localhost:3005/products`);
   //     if (!response.ok) {
   //       throw new Error("Something went wrong!");
   //     }
@@ -66,19 +61,19 @@ const Home = (props) => {
   //   fetchItemsHandler();
   // }, [fetchItemsHandler]);
 
-  // let content = <p>Found no product.</p>;
+  let content = <p>Found no product.</p>;
 
-  // if (items.length > 0) {
-  //   content = <ItemsSlider />;
-  // }
+  if (items.length > 0) {
+    content = <ItemsSlider />;
+  }
 
-  // if (error) {
-  //   content = <p>{error}</p>;
-  // }
+  if (error) {
+    content = <p>{error}</p>;
+  }
 
-  // if (isLoading) {
-  //   content = <p>Loading...</p>;
-  // }
+  if (isLoading) {
+    content = <p>Loading...</p>;
+  }
 
   return (
     <main>

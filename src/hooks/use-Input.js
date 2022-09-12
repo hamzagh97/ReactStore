@@ -1,22 +1,20 @@
-import React, { useState, useReducer } from "react";
+import { useReducer } from "react";
 
 const valueReducer = (state, action) => {
-  switch (action.type) {
-    case "USER_INPUT":
-      return {
-        value: action.val,
-        isTouched: state.isTouched,
-      };
-      break;
-    case "INPUT_BLUR":
-      return {
-        value: state.value,
-        isTouched: true,
-      };
-      break;
-    default:
-      break;
+  if (action.type === "USER_INPUT") {
+    return {
+      value: action.val,
+      isTouched: state.isTouched,
+    };
   }
+
+  if (action.type === "NPUT_BLUR") {
+    return {
+      value: state.value,
+      isTouched: true,
+    };
+  }
+
   return state;
 };
 

@@ -10,7 +10,10 @@ const Categories = (props) => {
         <p>DON’T LEAVE THE HOUSE WITHOUT THE ESSENTIALS</p>
       </div>
       <div className={classes.categories}>
-        <Categorie onClickCategorie={props.onCategorieClick} />
+        <Categorie
+          onClickCategorie={props.onCategorieClick}
+          data={props.onTakeDummyItems}
+        />
         <Categorie onClickCategorie={props.onCategorieClick} />
         <Categorie onClickCategorie={props.onCategorieClick} />
       </div>
