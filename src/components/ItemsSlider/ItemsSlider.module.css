@@ -55,7 +55,7 @@ ul.list li {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  z-index: 100;
+  z-index: 99;
 }
 
 .row:hover .handle {

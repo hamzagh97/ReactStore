@@ -4,6 +4,7 @@ import CartContext from "./Cart-Context";
 const initialItemsState = {
   items: [],
   totalAmount: 0,
+  Notif: { show: false, notifTitle: "", notifMessage: "" },
 };
 
 const itemsReducer = (state, action) => {
@@ -30,6 +31,11 @@ const itemsReducer = (state, action) => {
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
+      Notif: {
+        show: true,
+        notifTitle: "success",
+        notifMessage: "item added successfully",
+      },
     };
   }
   if (action.type === "REMOVE") {
@@ -54,7 +60,15 @@ const itemsReducer = (state, action) => {
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
+      Notif: {
+        show: true,
+        notifTitle: "success",
+        notifMessage: "item removed successfully",
+      },
     };
+  }
+  if (action.type === "RESET") {
+    return initialItemsState;
   }
   return initialItemsState;
 };
@@ -70,11 +84,17 @@ const CartContextProvider = (props) => {
     dispatch({ type: "REMOVE", id: id });
   };
 
+  const resetCartHandler = () => {
+    dispatch({ type: "RESET" });
+  };
+
   const Context = {
     addItemsToCart: AddedItemsHandler,
     removeItemsFromCart: removeItemsHandler,
     AddedCartItem: itemsState.items,
     cartTotalAmount: itemsState.totalAmount,
+    Notif: itemsState.Notif,
+    reset: resetCartHandler,
   };
 
   //////////////////////////////////////////

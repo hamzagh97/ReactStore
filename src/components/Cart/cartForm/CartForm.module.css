@@ -5,6 +5,7 @@ form.order-form {
 .actions {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .actions button {

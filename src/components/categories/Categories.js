@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Categories.module.css";
 import Categorie from "./categorie/Categorie";
+import { Link } from "react-router-dom";
 
 const Categories = (props) => {
   return (
@@ -10,12 +11,15 @@ const Categories = (props) => {
         <p>DON’T LEAVE THE HOUSE WITHOUT THE ESSENTIALS</p>
       </div>
       <div className={classes.categories}>
-        <Categorie
-          onClickCategorie={props.onCategorieClick}
-          data={props.onTakeDummyItems}
-        />
-        <Categorie onClickCategorie={props.onCategorieClick} />
-        <Categorie onClickCategorie={props.onCategorieClick} />
+        <Link to="/products">
+          <Categorie data={props.onTakeDummyItems} />
+        </Link>
+        <Link to="/products">
+          <Categorie />
+        </Link>
+        <Link to="/products">
+          <Categorie />
+        </Link>
       </div>
     </>
   );

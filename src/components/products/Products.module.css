@@ -1,0 +1,60 @@
+.topBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  position: fixed;
+  z-index: 2;
+  background-color: #fff;
+  text-transform: capitalize;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.topBar p {
+  font-weight: bold;
+}
+
+.topBar .filtersOption {
+  display: flex;
+}
+
+.topBar .filtersOption span {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.row {
+  margin: 3vw 0;
+}
+
+.row .container {
+  position: relative;
+  display: flex;
+}
+
+.row .container:hover .text {
+  opacity: 1;
+}
+
+.products {
+  width: 83%;
+  margin-left: auto;
+  padding: 50px 50px 50px 50px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+
+  /* transform: translateX(
+      calc(
+        (
+            var(--slider-index) *
+              (-100% + ((var(--slider-padding) * 2) + var(--movie-margin)))
+          ) / (var(--items-per-screen))
+      )
+    );  */
+  transition: width 200ms ease-in-out;
+}

@@ -5,7 +5,8 @@
       "title": "Adidas",
       "description": "Forward-looking silhouettes like the Ultraboost...",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/041b83fd-af5a-4da8-973c-fa8160df9100/air-huarache-se-womens-shoes-GZpbBG.png",
-      "price": 22.99
+      "price": 22.99,
+      "gender": "men"
     },
 
     {
@@ -13,7 +14,8 @@
       "title": "Converse",
       "description": "The enduring appeal of the Chuck Taylor...",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/88bd2660-a67c-4bc5-a606-79a03de31665/lebron-9-shoes-M3pP9Z.png",
-      "price": 16.5
+      "price": 16.5,
+      "gender": "men"
     },
 
     {
@@ -21,7 +23,8 @@
       "title": "Reebok",
       "description": "Founded in Britain, based in Boston, and bought by Germany's own Adidas...",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/609fe5e5-4c92-4278-9b5a-c67ba3d11736/air-vapormax-2021-flyknit-nn-mens-shoes-NpTfFz.png",
-      "price": 12.99
+      "price": 12.99,
+      "gender": "men"
     },
 
     {
@@ -29,7 +32,8 @@
       "title": "Adidas",
       "description": "Forward-looking silhouettes like the Ultraboost...",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5eb6df1b-20f1-48a9-b94a-b9b494a79636/zoom-alphafly-next-nature-road-racing-shoes-WnMHmS.png",
-      "price": 28.99
+      "price": 28.99,
+      "gender": "men"
     },
 
     {
@@ -37,7 +41,8 @@
       "title": "Vans",
       "description": "Authentic in a way most sneakers can only pretend to be...",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e1b80be6-fce8-4f2f-820e-fad7dd1a1272/air-force-1-mid-07-premium-mens-shoes.png",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "men"
     },
 
     {
@@ -45,7 +50,8 @@
       "title": "Puma",
       "description": "A formidable selection of retro-inflected lace-ups...",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e8bc7a58-dcf0-4f4b-9c55-e9dc84c87920/air-max-270-mens-shoes-KkLcGR.png",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "men"
     },
 
     {
@@ -53,84 +59,95 @@
       "title": "Nike",
       "description": "baddest name in the sneaker business...",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/a7780835-521f-41cb-953d-04b2559f597a/air-force-1-low-retro-mens-shoes.png",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "women"
     },
 
     {
       "id": "m8",
-      "name": "New Balance",
+      "title": "New Balance",
       "description": "The quintessential dad shoe brand has inspired countless imitators...",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e37c58-3b0e-46cc-81b4-d9433ac4eaa6/air-force-1-mid-07-lx-mens-shoes-M584gM.png",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "women"
     },
 
     {
       "id": "m9",
-      "name": "Jordan Brand",
+      "title": "Jordan Brand",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/36385538-6edd-4dcc-a961-4eeb3b034ae7/air-presto-mens-shoes-Z9tZw0.png",
       "description": "The industry has changed a lot since Nike introduced the Air Jordan...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "women"
     },
 
     {
       "id": "m10",
-      "name": "Yeezy",
+      "title": "Yeezy",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/fb1d9273-5bf5-4af8-a333-2e44f7e47042/air-presto-mens-shoes-SJcR17.png",
       "description": "Kanye West has transformed Yeezy into a multibillion dollar brand...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "women"
     },
 
     {
       "id": "m11",
-      "name": "Saucony",
+      "title": "Saucony",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/437c3f97-a508-4aaa-b7ce-aab11cf2a45a/air-force-1-07-lv8-mens-shoes-khpfrj.png",
       "description": "The brand tends to get a little less shine than some of its glossier...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "women"
     },
 
     {
       "id": "m12",
-      "name": "Veja",
+      "title": "Veja",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b2cb1d7d-3bb6-439d-b4e8-344ab4b3f8a6/air-huarache-mens-shoes-JppwBb.png",
       "description": "Burst onto the sneaker scene with an emphasis on simple...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "women"
     },
 
     {
       "id": "m13",
-      "name": "Salomon",
+      "title": "Salomon",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/17e1edd2-9500-4831-9ef5-67374f352a2e/dunk-high-retro-premium-emb-mens-shoes-vwrJnf.png",
       "description": "Emerged as a fashion-crowd favorite relatively recently...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "women"
     },
 
     {
       "id": "m14",
-      "name": "Salomon",
+      "title": "Salomon",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5c53bfd0-00dc-48a0-a737-8e7ce3dd9b1b/zoomx-invincible-run-flyknit-2-mens-road-running-shoes-gxNJpn.png",
       "description": "Emerged as a fashion-crowd favorite relatively recently...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "kids"
     },
     {
       "id": "m15",
-      "name": "Salomon",
+      "title": "Salomon",
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_700,h_700/global/374915/01/sv01/fnd/PNA/fmt/png/Suede-Classic-XXI-Men's-Sneakers",
       "description": "Emerged as a fashion-crowd favorite relatively recently...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "kids"
     },
     {
       "id": "m16",
-      "name": "Salomon",
+      "title": "Salomon",
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_700,h_700/global/380173/04/sv01/fnd/PNA/fmt/png/Speedcat-LS-Men's-Driving-Shoes",
       "description": "Emerged as a fashion-crowd favorite relatively recently...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "kids"
     },
     {
       "id": "m17",
-      "name": "Salomon",
+      "title": "Salomon",
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_700,h_700/global/369155/04/sv01/fnd/PNA/fmt/png/Cali-Women's-Sneakers",
       "description": "Emerged as a fashion-crowd favorite relatively recently...",
-      "price": 18.99
+      "price": 18.99,
+      "gender": "kids"
     }
   ]
 }

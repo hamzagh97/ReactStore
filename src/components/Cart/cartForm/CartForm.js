@@ -5,13 +5,15 @@ import Button from "../../UI/Button/Button";
 import useInput from "../../../hooks/use-Input";
 
 const CartForm = (props) => {
+  const [formError, setFormError] = useState(false);
+
   const {
     value: nameValue,
     isValid: nameIsValid,
     valueNotValid: nameIsNotValid,
     valueOnChangeHandler: nameOnChangeHandler,
     valueOnBlurHandler: nameOnBlurHandler,
-  } = useInput((value) => value >= 3);
+  } = useInput((value) => value.length >= 3);
 
   const nameError = <div>Please enter a valid name</div>;
 
@@ -21,9 +23,9 @@ const CartForm = (props) => {
     valueNotValid: emailIsNotValid,
     valueOnChangeHandler: emailOnChangeHandler,
     valueOnBlurHandler: emailOnBlurHandler,
-  } = useInput((value) => value >= 3);
+  } = useInput((value) => value.includes("@"));
 
-  const emailError = <div>Please enter a valid name</div>;
+  const emailError = <div>Please enter a valid email</div>;
 
   const {
     value: postaclCodeValue,
@@ -31,9 +33,9 @@ const CartForm = (props) => {
     valueNotValid: postaclCodeIsNotValid,
     valueOnChangeHandler: postalCodeOnChangeHandler,
     valueOnBlurHandler: postalCodeOnBlurHandler,
-  } = useInput((value) => value >= 3);
+  } = useInput((value) => value.length >= 4);
 
-  const postalCodeError = <div>Please enter a valid name</div>;
+  const postalCodeError = <div>Please enter a valid postacl code</div>;
 
   const {
     value: streetValue,
@@ -41,14 +43,26 @@ const CartForm = (props) => {
     valueNotValid: streetIsNotValid,
     valueOnChangeHandler: streetOnChangeHandler,
     valueOnBlurHandler: streetOnBlurHandler,
-  } = useInput((value) => value >= 3);
+  } = useInput((value) => value.length >= 3);
 
-  const streetError = <div>Please enter a valid name</div>;
+  const streetError = <div>Please enter a valid street name</div>;
 
   const onConfirmHandle = (e) => {
     e.preventDefault();
-    props.onAddOrder({ nameValue, emailValue, postaclCodeValue, streetValue });
+    if (nameIsValid && emailIsValid && postaclCodeIsValid && streetIsValid) {
+      setFormError(false);
+      props.onAddOrder({
+        nameValue,
+        emailValue,
+        postaclCodeValue,
+        streetValue,
+      });
+    } else {
+      setFormError(true);
+    }
   };
+
+  const formErrorMessage = <div>form is invalid</div>;
 
   return (
     <form className={classes["order-form"]}>
@@ -89,6 +103,8 @@ const CartForm = (props) => {
       />
       {streetIsNotValid && streetError}
       <div className={classes.actions}>
+        {formError && formErrorMessage}
+
         <Button
           type="submit"
           className={classes["button--alt"]}

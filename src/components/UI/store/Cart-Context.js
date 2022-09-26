@@ -5,6 +5,8 @@ const CartContext = React.createContext({
   removeItemsFromCart: (id) => {},
   AddedCartItem: [],
   cartTotalAmount: 0,
+  Notif: { show: false, notifTitle: "", notifMessage: "" },
+  reset: () => {},
 });
 
 export default CartContext;

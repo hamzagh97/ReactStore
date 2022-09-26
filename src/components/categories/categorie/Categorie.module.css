@@ -5,6 +5,21 @@
   align-items: center;
   overflow: hidden;
   cursor: pointer;
+  position: relative;
+}
+
+.overlay {
+  background-color: lightgrey;
+  opacity: 0.5;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.categorie:hover .overlay {
+  height: 100%;
 }
 
 .categorie img {

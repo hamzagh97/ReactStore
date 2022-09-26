@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-
 import classes from "./Navigation.module.css";
 import HeaderCartButton from "./HeaderCartButton";
+import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
   return (
@@ -16,7 +16,9 @@ const Navigation = (props) => {
 
       {props.onShownav && (
         <li>
-          <a onClick={props.onLogoutNav}>Logout</a>
+          <Link to="/login" onClick={props.onLogoutNav}>
+            Logout
+          </Link>
         </li>
       )}
     </ul>

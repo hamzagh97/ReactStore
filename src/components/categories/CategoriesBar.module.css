@@ -3,12 +3,19 @@ ul.categories {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+
   list-style: none;
 }
 
-ul.categories li {
+ul.categories .navlink {
   margin: 0 1.35rem;
+  text-transform: capitalize;
+  color: #fff;
+  text-decoration: none;
+}
+
+.active {
+  color: lightgrey;
 }
 
 @media (max-width: 576px) {

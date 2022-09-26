@@ -5,16 +5,12 @@ import { flushSync } from "react-dom";
 import useFetch from "../../hooks/use-fecth";
 
 const AvailableItems = (props) => {
-  const { items, error, isLoading } = useFetch(
-    "http://localhost:3005/products"
-  );
-
   const selectedRef = useRef();
   const [index, setIndex] = useState(0);
   const onClickHandle = (direction) => {
     flushSync(() => {
       if (direction === "right") {
-        if (index <= items.length - 1) {
+        if (index <= props.items.length - 1) {
           setIndex(index + 4);
         } else {
           setIndex(0);
@@ -34,6 +30,7 @@ const AvailableItems = (props) => {
     });
   };
   // const itemProps = index === i ? { ref: selectedRef } : {};
+  console.log(props.topSlider);
 
   return (
     <>
@@ -51,7 +48,7 @@ const AvailableItems = (props) => {
           <div className={classes.text}>&#8249;</div>
         </button>
         <div className={classes.slider}>
-          {items.map((item, i) => (
+          {props.items.map((item, i) => (
             <Item
               id={item.id}
               key={item.id}
@@ -59,6 +56,7 @@ const AvailableItems = (props) => {
               description={item.description}
               price={item.price}
               image={item.image}
+              gender={item.gender}
               ref={index === i ? selectedRef : null}
             />
           ))}

@@ -1,0 +1,43 @@
+.content {
+  position: relative;
+}
+
+.main-banner {
+  position: relative;
+  height: 95vh;
+}
+
+.main-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.main-banner .lead {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.main-banner h1 {
+  font-size: 48px;
+}
+
+.main-banner p {
+  margin-top: 20px;
+}

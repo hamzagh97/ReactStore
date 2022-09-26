@@ -15,7 +15,6 @@ const useFetch = (url) => {
       }
 
       const datas = await response.json();
-      console.log(datas);
       const transformedItems = datas.map((data) => {
         return {
           id: data.id,
@@ -23,10 +22,10 @@ const useFetch = (url) => {
           price: data.price,
           description: data.description,
           image: data.image,
+          gender: data.gender,
         };
       });
       setItems(transformedItems);
-      console.log(transformedItems);
     } catch (error) {
       setError(error.message);
     }
@@ -37,7 +36,7 @@ const useFetch = (url) => {
     fetchItemsHandler();
   }, [fetchItemsHandler]);
 
-  return { items, error, isLoading };
+  return { items, error, isLoading, setItems };
 };
 
 export default useFetch;

@@ -46,11 +46,18 @@ const Cart = (props) => {
 
   const formError = <div>You have to add items first</div>;
 
-  const onAddOrderHandle = (personalInfo) => {
-    const data = {
-      userInfo: personalInfo,
-      order: Context.AddedCartItem,
-    };
+  const onAddOrderHandle = async (personalInfo) => {
+    await fetch(
+      "https://netflix-clone-5f9d8-default-rtdb.europe-west1.firebasedatabase.app/order.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: personalInfo,
+          orderedItems: Context.AddedCartItem,
+        }),
+      }
+    );
+    Context.reset();
   };
 
   return (

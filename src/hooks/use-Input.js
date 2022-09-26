@@ -8,7 +8,7 @@ const valueReducer = (state, action) => {
     };
   }
 
-  if (action.type === "NPUT_BLUR") {
+  if (action.type === "INPUT_BLUR") {
     return {
       value: state.value,
       isTouched: true,
