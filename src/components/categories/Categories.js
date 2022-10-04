@@ -11,13 +11,13 @@ const Categories = (props) => {
         <p>DON’T LEAVE THE HOUSE WITHOUT THE ESSENTIALS</p>
       </div>
       <div className={classes.categories}>
-        <Link to="/products">
+        <Link to="/shop">
           <Categorie data={props.onTakeDummyItems} />
         </Link>
-        <Link to="/products">
+        <Link to="/shop">
           <Categorie />
         </Link>
-        <Link to="/products">
+        <Link to="/shop">
           <Categorie />
         </Link>
       </div>

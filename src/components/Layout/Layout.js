@@ -11,7 +11,7 @@ const Layout = (props) => {
         isLoggedIn={props.isLoggedIn}
       />
       <main>{props.children}</main>
-      <footer>zaza</footer>
+      <footer>footer</footer>
     </>
   );
 };

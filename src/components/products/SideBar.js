@@ -34,11 +34,15 @@ const SideBar = (props) => {
         transform: props.showSideBar ? "translateX(0)" : "translateX(-100%)",
       }}
     >
+      {/* <div className={classes.content}> */}
       <Filter
-        labels={["all", "men", "women", "kids"]}
+        labels={["men", "women", "kids"]}
         onPassData={onCheckBox}
         setter={props.setGenderValue}
         name="gender"
+        allFilters={props.allFilters}
+        onHandleNestedProp={props.handleNestedProp}
+        togglecheckbox={props.togglecheckbox}
         // ref={genderRef}
         // passCheckBoxState={onCheckBoxState}
       />
@@ -47,15 +51,17 @@ const SideBar = (props) => {
         onPassData={onCheckBox}
         setter={props.setPriceValue}
         name="price"
+        allFilters={props.allFilters}
+        onHandleNestedProp={props.handleNestedProp}
         // ref={priceRef}
 
         // passCheckBoxState={onCheckBoxState}
       />
       <Filter
         labels={[
-          "adidas",
-          "nike",
-          "converse",
+          "Adidas",
+          "Nike",
+          "Converse",
           "Reebok",
           "Vans",
           "Puma",
@@ -69,6 +75,8 @@ const SideBar = (props) => {
         onPassData={onCheckBox}
         setter={props.setBrandValue}
         name="brand"
+        allFilters={props.allFilters}
+        onHandleNestedProp={props.handleNestedProp}
         // ref={brandRef}
 
         // passCheckBoxState={onCheckBoxState}
@@ -78,10 +86,13 @@ const SideBar = (props) => {
         onPassData={onCheckBox}
         setter={props.setStockValue}
         name="stock"
+        allFilters={props.allFilters}
+        onHandleNestedProp={props.handleNestedProp}
         // ref={stockRef}
 
         // passCheckBoxState={onCheckBoxState}
       />
+      {/* </div> */}
     </div>
   );
 };

@@ -8,8 +8,9 @@ const CategoriesBar = () => {
     <ul className={classes.categories}>
       <li>
         <NavLink
-          className={classes.navlink}
-          activeClassName={classes.active}
+          className={(navData) =>
+            navData.isActive ? classes.active : classes.navlink
+          }
           to="/home"
         >
           home
@@ -17,8 +18,9 @@ const CategoriesBar = () => {
       </li>
       <li>
         <NavLink
-          className={classes.navlink}
-          activeClassName={classes.active}
+          className={(navData) =>
+            navData.isActive ? classes.active : classes.navlink
+          }
           to="/shop"
         >
           shop
@@ -26,8 +28,9 @@ const CategoriesBar = () => {
       </li>
       <li>
         <NavLink
-          className={classes.navlink}
-          activeClassName={classes.active}
+          className={(navData) =>
+            navData.isActive ? classes.active : classes.navlink
+          }
           to="/blog"
         >
           blog
@@ -35,8 +38,9 @@ const CategoriesBar = () => {
       </li>
       <li>
         <NavLink
-          className={classes.navlink}
-          activeClassName={classes.active}
+          className={(navData) =>
+            navData.isActive ? classes.active : classes.navlink
+          }
           to="/about"
         >
           about
@@ -44,8 +48,9 @@ const CategoriesBar = () => {
       </li>
       <li>
         <NavLink
-          className={classes.navlink}
-          activeClassName={classes.active}
+          className={(navData) =>
+            navData.isActive ? classes.active : classes.navlink
+          }
           to="/contact"
         >
           contact

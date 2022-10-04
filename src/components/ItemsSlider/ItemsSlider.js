@@ -30,7 +30,6 @@ const AvailableItems = (props) => {
     });
   };
   // const itemProps = index === i ? { ref: selectedRef } : {};
-  console.log(props.topSlider);
 
   return (
     <>
@@ -58,6 +57,7 @@ const AvailableItems = (props) => {
               image={item.image}
               gender={item.gender}
               ref={index === i ? selectedRef : null}
+              isTop={props.isTop}
             />
           ))}
         </div>

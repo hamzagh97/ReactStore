@@ -4,7 +4,6 @@ import classes from "./LoginPage.module.css";
 import Button from "../components/UI/Button/Button";
 import Input from "../components/UI/Input/loginInput";
 import useInput from "../hooks/use-Input";
-import { Link } from "react-router-dom";
 
 const Login = (props) => {
   // const [enteredEmail, setEnteredEmail] = useState("");
@@ -71,15 +70,11 @@ const Login = (props) => {
         />
         {passwordIsNotValid && passwordError}
         <div className={classes.actions}>
-          <Link to="/home">
-            <Button
-              type="submit"
-              className={classes.btn}
-              disabled={!formIsValid}
-            >
-              Login
-            </Button>
-          </Link>
+          {/* <Link to="/home"> */}
+          <Button type="submit" className={classes.btn} disabled={!formIsValid}>
+            Login
+          </Button>
+          {/* </Link> */}
         </div>
       </form>
     </Card>

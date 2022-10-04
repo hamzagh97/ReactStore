@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import ItemForm from "./ItemForm";
 import classes from "./Item.module.css";
 import CartContext from "../../UI/store/Cart-Context";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { Route } from "react-router-dom";
 import ItemPage from "../../../pages/ItemPage";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useMatch } from "react-router-dom";
 
 const Item = React.forwardRef((props, ref) => {
   const Context = useContext(CartContext);
@@ -23,23 +24,23 @@ const Item = React.forwardRef((props, ref) => {
     });
   };
 
-  const params = useParams();
+  // const match = useMatch();
+  // console.log(match);
 
   return (
     <div className={classes.item}>
       <img src={props.image} alt="" ref={ref} />
       <div className={classes.info}>
-        <Link to={`products/${props.title}`}>
+        <Link to={`/item-details/${props.id}`}>
           <h3>{props.title}</h3>
         </Link>
-        <Route path="/products/:itemId" title={props.title}>
-          <ItemPage />
-        </Route>
 
         {/* <div className={classes.description}>{props.description}</div> */}
         <div className={classes.price}></div>
         <div>{props.gender} s shoes`</div>
-        {!props.isProductPage && <ItemForm takeAmount={addAmountToCart} />}
+        {!props.isProductPage && props.isTop && (
+          <ItemForm takeAmount={addAmountToCart} />
+        )}
       </div>
     </div>
   );

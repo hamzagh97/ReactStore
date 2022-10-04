@@ -3,21 +3,27 @@ import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import Cart from "./components/Cart/Cart";
-import CartContextProvider from "./components/UI/store/CartContextProvider";
 import Layout from "./components/Layout/Layout";
 import ProductsPage from "./pages/ProductsPage";
-import { Switch } from "react-router-dom";
-import { Route } from "react-router-dom";
-import useFetch from "./hooks/use-fecth";
 import ItemPage from "./pages/ItemPage";
+import { Route } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "./components/UI/store/Cart-Context";
 
 function App() {
   const [shown, setShowCartModal] = useState();
-  const [loggedIn, setIsLoggedIn] = useState(true);
+  const [loggedIn, setIsLoggedIn] = useState();
+  const Context = useContext(CartContext);
 
-  const { items, error, isLoading } = useFetch(
-    "http://localhost:3005/products"
-  );
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(Context.AddedCartItem));
+    localStorage.setItem(
+      "totalAmount",
+      JSON.stringify(Context.cartTotalAmount)
+    );
+  }, [Context.AddedCartItem, Context.cartTotalAmount]);
 
   useEffect(() => {
     if (localStorage.getItem("loggedIn") === "1") {
@@ -48,7 +54,7 @@ function App() {
   };
 
   return (
-    <CartContextProvider>
+    <>
       {shown && <Cart onHideCart={hideCartModalHandler} />}
 
       <Layout
@@ -56,19 +62,19 @@ function App() {
         onLogout={logoutHandler}
         isLoggedIn={loggedIn}
       >
-        <Switch>
-          <Route path="/login">
-            <LoginPage onLogin={loginHandler} />
-          </Route>
-          <Route path="/home">
-            <HomePage onLogin={loginHandler} items={items} />
-          </Route>
-          <Route path="/products" exact>
-            <ProductsPage items={items} />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route
+            path="/login"
+            element={!loggedIn && <LoginPage onLogin={loginHandler} />}
+          />
+          <Route path="/home" element={loggedIn && <HomePage />} />
+
+          <Route path="/shop" element={<ProductsPage />} />
+          <Route path="/item-details/:itemId" element={<ItemPage />} />
+        </Routes>
       </Layout>
-    </CartContextProvider>
+    </>
 
     // <CartContextProvider>
     //   {shown && <Cart onHideCart={hideCartModalHandler} />}

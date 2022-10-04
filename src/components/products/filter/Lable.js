@@ -19,9 +19,12 @@ const Lable = (props) => {
           type="radio"
           id={props.label}
           onChange={(e) => {
-            props.settInputState(props.label);
+            props.settInputState(e.target.value);
           }}
           name={props.name}
+          value={props.label}
+          // checked={props.allFilters.filters[props.label]}
+          onClick={props.togglecheckbox}
           // ref={ref}
         ></input>
         <span className={classes.checkmark}></span>

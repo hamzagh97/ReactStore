@@ -2,8 +2,8 @@ import React, { useReducer } from "react";
 import CartContext from "./Cart-Context";
 
 const initialItemsState = {
-  items: [],
-  totalAmount: 0,
+  items: JSON.parse(localStorage.getItem("cartItems")) || [],
+  totalAmount: JSON.parse(localStorage.getItem("totalAmount")) || 0,
   Notif: { show: false, notifTitle: "", notifMessage: "" },
 };
 

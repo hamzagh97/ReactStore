@@ -7,9 +7,17 @@ import CartForm from "./cartForm/CartForm";
 
 const Cart = (props) => {
   const Context = useContext(CartContext);
-  const cartItems = Context.AddedCartItem.length;
+  // const cartItems = Context.AddedCartItem.length;
+  const items = Context.AddedCartItem;
   const [showForm, setShowForm] = useState(false);
   const [showError, setShowError] = useState(false);
+  // const [items, setItems] = useState([]);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("cartItems")) {
+  //     setItems(JSON.parse(localStorage.getItem("cartItems")));
+  //   }
+  // }, []);
 
   // useEffect(() => {
   const cartItemRemoveHandler = (id) => {
@@ -25,20 +33,20 @@ const Cart = (props) => {
   };
 
   const onOpenForm = () => {
-    if (cartItems > 0) {
+    if (items.length > 0) {
       setShowForm(true);
     }
 
-    if (cartItems === 0) {
+    if (items.length === 0) {
       setShowError(true);
     }
   };
 
   useEffect(() => {
-    if (cartItems === 0) {
+    if (items.length === 0) {
       setShowForm(false);
     }
-  }, [cartItems]);
+  }, [items.length]);
 
   const closeFormHandle = () => {
     setShowForm(false);
@@ -48,7 +56,7 @@ const Cart = (props) => {
 
   const onAddOrderHandle = async (personalInfo) => {
     await fetch(
-      "https://netflix-clone-5f9d8-default-rtdb.europe-west1.firebasedatabase.app/order.json",
+      "https://test-3db7e-default-rtdb.europe-west1.firebasedatabase.app/order.json",
       {
         method: "POST",
         body: JSON.stringify({
@@ -57,13 +65,15 @@ const Cart = (props) => {
         }),
       }
     );
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("totalAmount");
     Context.reset();
   };
 
   return (
     <Modal hideCartFromBackdrop={props.onHideCart}>
       <ul className={classes["cart-items"]}>
-        {Context.AddedCartItem.map((item) => (
+        {items.map((item) => (
           <CartItem
             key={item.id}
             id={item.id}

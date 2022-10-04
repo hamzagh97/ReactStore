@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import classes from "./TopBar.module.css";
 import SearchIcon from "../search/SearchIcon";
-import CartItem from "../Cart/cartItem/CartItem";
-import Item from "../ItemsSlider/Item/Item";
 import SearchedItem from "./SearchedItem";
+import useFetch from "../../hooks/use-fecth";
+import { Link } from "react-router-dom";
 
 const TopBar = (props) => {
+  const { items, error, isLoading } = useFetch(
+    `http://localhost:3005/products`
+  );
+  console.log(items);
   const [searchValue, setSearchValue] = useState("");
 
   const search = (e) => {
     setSearchValue(e.target.value);
   };
-  let searchedItems = [];
-  const vvv = searchValue.toLowerCase().split("");
+  const searchedItems = items.filter((item) => {
+    return item.title.toLowerCase().includes(searchValue.toLowerCase());
+  });
+  // const vvv = searchValue.toLowerCase().split("");
 
-  let sss = [];
+  // let sss = [];
 
   // for (let i = 0; i < props.items.length; i++) {
   //   sss.push(props.items[i].title.toLowerCase().split(""));
@@ -38,30 +44,35 @@ const TopBar = (props) => {
             placeholder="Search"
           />
         </div>
-        <span className={classes.searchIcon}>
-          <div>search</div>
-        </span>
+
         <span onClick={props.toggleSideBar}>
           {props.showSideBar ? "hide" : "show"} filters
         </span>
         <span>sort by</span>
       </div>
 
-      <div className={classes.searchResult}>
-        <ul>
-          {searchedItems.map((item, i) => (
-            <SearchedItem
-              id={item.id}
-              key={i}
-              title={item.title}
-              description={item.description}
-              price={item.price}
-              image={item.image}
-              gender={item.gender}
-            />
-          ))}
-        </ul>
-      </div>
+      {searchValue.length > 0 && (
+        <>
+          <div className={classes.overlay}></div>
+          <div className={classes.searchResult}>
+            <ul>
+              {searchedItems.map((item, i) => (
+                <Link to={`/item-details/${item.id}`}>
+                  <SearchedItem
+                    id={item.id}
+                    key={i}
+                    title={item.title}
+                    description={item.description}
+                    price={item.price}
+                    image={item.image}
+                    gender={item.gender}
+                  />
+                </Link>
+              ))}
+            </ul>
+          </div>
+        </>
+      )}
     </div>
   );
 };

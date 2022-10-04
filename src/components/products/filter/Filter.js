@@ -25,6 +25,9 @@ const Filter = (props, ref) => {
             checkLable={passData}
             settInputState={props.setter}
             name={props.name}
+            allFilters={props.allFilters}
+            getNestedProp={props.onHandleNestedProp}
+            togglecheckbox={props.togglecheckbox}
             // ref={ref}
             // onCheckBox={passCheckBoxStateHandle}
           />

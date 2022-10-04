@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./Products.module.css";
 import Item from "../ItemsSlider/Item/Item";
 import Notification from "../UI/Notifications/Notifications";
+import useFetch from "../../hooks/use-fecth";
 
 const Products = (props) => {
   // const filter {
@@ -71,20 +72,20 @@ const Products = (props) => {
   //   return true;
   // });
 
-  const allFilters = props.value;
+  // const allFilters = props.value;
 
-  const filteredItems = props.items
-    .filter(
-      (item) =>
-        (allFilters.gender &&
-          item.gender.toLowerCase() === allFilters.gender.toLowerCase()) ||
-        (allFilters.gender && item.gender === allFilters.gender)
-    )
-    .filter(
-      (item) =>
-        allFilters.title &&
-        item.title.toLowerCase() === allFilters.title.toLowerCase()
-    );
+  // const filteredItems = props.items
+  //   .filter(
+  //     (item) =>
+  //       (allFilters.gender &&
+  //         item.gender.toLowerCase() === allFilters.gender.toLowerCase()) ||
+  //       (allFilters.gender && item.gender === allFilters.gender)
+  //   )
+  //   .filter(
+  //     (item) =>
+  //       allFilters.title &&
+  //       item.title.toLowerCase() === allFilters.title.toLowerCase()
+  //   );
 
   return (
     <>
@@ -92,10 +93,10 @@ const Products = (props) => {
         className={classes.products}
         style={{ width: props.onShowSideBar ? "83%" : "100%" }}
       >
-        {filteredItems.map((item, i) => (
+        {props.items.map((item) => (
           <Item
             id={item.id}
-            key={i}
+            key={item.id}
             title={item.title}
             description={item.description}
             price={item.price}

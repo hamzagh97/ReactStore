@@ -7,7 +7,10 @@ import MainBanner from "../components/MainBanner";
 import useFetch from "../hooks/use-fecth";
 
 const HomePage = (props) => {
-  const isTop = false;
+  const { items, error, isLoading } = useFetch(
+    "http://localhost:3005/products"
+  );
+  const isTop = true;
 
   // const [items, setItems] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
@@ -47,7 +50,7 @@ const HomePage = (props) => {
 
   let content = <p>Found no product.</p>;
 
-  if (props.items.length > 0) {
+  if (items.length > 0) {
     content = <ItemsSlider />;
   }
 
@@ -62,10 +65,10 @@ const HomePage = (props) => {
   return (
     <>
       <MainBanner />
-      <ItemsSlider items={props.items} topSlider={isTop} />
+      <ItemsSlider items={items} isTop={isTop} />
       <Banner />
       <Categories />
-      <ItemsSlider items={props.items} />
+      <ItemsSlider items={items} />
     </>
   );
 };

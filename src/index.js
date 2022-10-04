@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Notification from "./components/UI/Notifications/Notifications";
-import { BrowserRouter } from "react-router-dom";
-
 import "./index.css";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import CartContextProvider from "./components/UI/store/CartContextProvider";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <App />
+    <CartContextProvider>
+      <App />
+    </CartContextProvider>
   </BrowserRouter>
 );

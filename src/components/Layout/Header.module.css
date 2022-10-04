@@ -21,9 +21,16 @@ header {
   padding-right: 2.5%;
 }
 
-header .logo {
+.logo-container {
   display: flex;
   flex: 3;
+  justify-content: flex-start;
+}
+
+header .logo {
+  display: flex;
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (max-width: 576px) {

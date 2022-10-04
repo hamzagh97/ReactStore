@@ -4,10 +4,11 @@ import Navigation from "./Navigation";
 import CategoriesBar from "../categories/CategoriesBar";
 import Notification from "../UI/Notifications/Notifications";
 import CartContext from "../UI/store/Cart-Context";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const Context = useContext(CartContext);
-  let showNotif = Context.Notif.show;
+  const showNotif = Context.Notif.show;
   const notifTitle = Context.Notif.notifTitle;
   const notifMessage = Context.Notif.notifMessage;
 
@@ -33,8 +34,10 @@ const Header = (props) => {
   return (
     <header>
       <div className={classes.container}>
-        <div className={classes.logo}>
-          <h2>StoreName</h2>
+        <div className={classes["logo-container"]}>
+          <Link to="/home" className={classes.logo}>
+            <h2>StoreName</h2>
+          </Link>
         </div>
         {props.isLoggedIn && (
           <>
